@@ -31,8 +31,7 @@ void putchar(char ch) {
 void kernel_main(void) {
     memset(__bss, 0, (size_t) __bss_end - (size_t) __bss);
 
-    printf("\n\nHello World!\n");
-    printf("stack in on: %p\n", __stack_top);
+    PANIC("booted!");
 
     for(;;) {
         __asm__ __volatile__("wfi");
